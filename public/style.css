@@ -1,0 +1,165 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #181818; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto branca */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Barra lateral largura fixa, conteúdo ocupa o restante */
+    grid-template-rows: auto 1fr; /* Cabeçalho altura automática, conteúdo ocupa o restante */
+    height: 100vh; /* Altura da viewport */
+}
+
+.sidebar {
+    background-color: #000;
+    padding: 20px;
+    grid-row: 1 / 3; /* Estende da linha 1 até a 3 */
+}
+
+.sidebar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 10px;
+}
+
+.sidebar .menu a {
+    color: #b3b3b3;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar .menu a:hover {
+    background-color: #282828;
+    color: #fff;
+}
+
+.header {
+    background-color: #282828;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.header .search-bar input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #121212;
+    color: #fff;
+}
+
+.header .search-bar button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #303030;
+    color: #fff;
+    cursor: pointer;
+}
+
+.main-content {
+    padding: 20px;
+    overflow-y: auto; /* Adiciona barra de rolagem se o conteúdo for muito longo */
+}
+
+.main-content h2 {
+    margin-bottom: 15px;
+}
+
+.main-content .album-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Layout responsivo com cards de largura mínima 200px */
+    gap: 20px;
+}
+
+.main-content .album-card {
+    background-color: #282828;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.main-content .album-card img {
+    width: 100%;
+    display: block;
+}
+
+.main-content .album-card .album-details {
+    padding: 15px;
+}
+
+.main-content .album-card h3 {
+    font-size: 1em;
+    margin-bottom: 5px;
+    white-space: nowrap; /* Evita quebras de linha longas */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Adiciona "..." para indicar texto cortado */
+}
+
+.main-content .album-card .artist,
+.main-content .album-card .type {
+    color: #b3b3b3;
+    font-size: 0.9em;
+}
